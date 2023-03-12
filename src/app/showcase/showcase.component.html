@@ -1,0 +1,34 @@
+<div *ngIf="title">
+  <p i18n>This is a test translation.</p>
+  <input type="text" placeholder="Test placeholder" i18n-placeholder />
+  <p i18n>This is test translation with ICU: {{ title }}</p>
+  <select
+    name="pets"
+    id="pet-select"
+    placeholder="Choose language"
+    i18n-placeholder
+    (change)="changeLanguage($event)"
+  >
+    <option
+      [value]="availableLanguages.english"
+      [selected]="chosenLanguage === availableLanguages.english"
+      i18n
+    >
+      English
+    </option>
+    <option
+      [value]="availableLanguages.polish"
+      [selected]="chosenLanguage === availableLanguages.polish"
+      i18n
+    >
+      Polish
+    </option>
+    <option
+      [value]="availableLanguages.german"
+      [selected]="chosenLanguage === availableLanguages.german"
+      i18n
+    >
+      German
+    </option>
+  </select>
+</div>
